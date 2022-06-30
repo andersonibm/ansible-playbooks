@@ -1,0 +1,12 @@
+---
+- hosts: all
+  collections:
+    - ibm.ibm_zos_core
+  gather_facts: no
+  environment: "{{ environment_vars }}"
+
+  tasks:
+     - name: Run RACF command LISTUSER
+       zos_tso_command:
+         commands:
+-	LISTUSER
